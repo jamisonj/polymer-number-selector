@@ -1,0 +1,69 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="./bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="number-selector">
+
+  <template>
+
+    <style>
+      /* local DOM styles go here */
+      :host {
+        display: inline-block;
+      }
+    </style>
+
+    <!-- local DOM goes here -->
+    <paper-icon-button id="increment" icon="add-circle-outline"></paper-icon-button>
+    <span class="value">[[value]]</span>
+    <paper-icon-button id="decrement" icon="remove-circle-outline"></paper-icon-button>
+  </template>
+
+  <script>
+  Polymer({
+    is: 'number-selector',
+    properties: {
+    	value: {
+    		value: 0,
+    		notify: true,
+    		reflectToAttribute: true
+    	},
+    	maximum: {
+    		value: NaN
+    	},
+    	minimum: {
+    		value: NaN
+    	}
+    },
+    listeners: {
+    	'increment.tap': 'increment',
+    	'decrement.tap': 'decrement'
+    },
+    increment: function() {
+    	if (isNaN(this.maximum)) {
+    		this.value++;
+    	}
+
+    	else {
+    		if (parseInt(this.maximum) > parseInt(this.value)) {
+    			this.value++;
+    		}
+    	}
+    	
+    },
+    decrement: function() {
+    	if (isNaN(this.minimum)) {
+			this.value--;
+    	}
+
+    	else {
+    		if (parseInt(this.minimum) < parseInt(this.value)) {
+    			this.value--;
+    		}
+    	}
+    }
+  });
+  </script>
+
+</dom-module>
+

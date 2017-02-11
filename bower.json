@@ -1,0 +1,15 @@
+{
+  "name": "polymer-number-selector",
+  "homepage": "https://github.com/jamisonj/polymer-number-selector",
+  "authors": [
+    "Justin Jamison <justin.jamison@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.1.4",
+    "iron-icons": "PolymerElements/iron-icons#^1.2.0"
+  }
+}
